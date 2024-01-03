@@ -13,7 +13,7 @@ Please feel free to contact me for questions, or just to have a chat :-)
 |   |    |  
 |-------------- | -------------- 
 | Our Projects    | [here](./projects)     |
-| Our Presentation    | [here](./presentation/NgRx%20Signals%20Store.pdf)     |
+| Our Presentation    | [here](./presentation/Ng%20New.pdf)     |
 
 ## The `inject` function
 * How to Inject using the function
