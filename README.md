@@ -1,8 +1,8 @@
-<img src="./images/oracle-tech-days.png" Height="80"><img src="./images/title.png" Height="80"><img src="./images/john-bryce.png" Height="80">
+<img src="./images/geek-week.png" Height="80"><img src="./images/title.png" Height="80"><img src="./images/john-bryce.png" Height="80">
 <br>
 <img src="./images/logo.png" Height="135">
-# Ng New 2023 - The Angular Renaissance
-* By Kobi Hari (04/01/2024)
+# Ng New 2024 - The Angular Renaissance
+* By Kobi Hari (027/06/2024)
 
 ## Contact me
 Please feel free to contact me for questions, or just to have a chat :-)
@@ -46,5 +46,26 @@ Please feel free to contact me for questions, or just to have a chat :-)
 * The `effect` function
 * Where can we create signals
 * The limitations of using signals
+
+## Interoperability with RxJS
+* convert an observable into signal with the `toSignal` function
+* convert a signal into observable with the `toObservable` function
+* Use them both with caution - mind the injection context
+
+## Singnals in Angular 18+ (On the route to zoneless)
+* Signals slowly replace the classic angular decorators
+* use `readonly caption = input('hello')` to create an input called `caption' with a default value of 'hello'
+* use `readonly caption = input.required<string>()` to create a required input
+* use the `output` function to create an output event emitter that is also a signal
+* use the `model` function to create a two-way binding (input + output)
+  * You can use it like input and respond to changes in it using an effect
+  * You can use it like output and push events into it
+  * The consumer can use 3 types of bindings into it: 
+    * `<app-comp [caption]="value"/>`
+    * `<app-comp (captionChanged)="doSomething()"/>`
+    * `<app-comp [(caption)]="writeableSignal"/>`
+* use the `viewChild()`, `viewChildren`, `contentChild`, `contentChildren` functions to query the view and content into a signal
+
+
 
 
