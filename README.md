@@ -2,7 +2,7 @@
 <br>
 <img src="./images/logo.png" Height="135">
 # Ng New 2024 - The Angular Renaissance
-* By Kobi Hari (027/06/2024)
+* By Kobi Hari (27/06/2024)
 
 ## Contact me
 Please feel free to contact me for questions, or just to have a chat :-)
