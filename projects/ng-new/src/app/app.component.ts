@@ -1,20 +1,24 @@
-import { Component, DestroyRef, OnDestroy, OnInit, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { MyService } from './my-service.service';
-import { calcVat, vatCalculator } from './taxes.util';
-import { Subscription, interval } from 'rxjs';
+import { vatCalculator } from './taxes.util';
+import { interval } from 'rxjs';
+import { SharedModule } from './shared.module';
+import { MyLinkDirective } from './directives/my-link.directive';
+import { MY_LINK_CLASS } from './directives/my-link-class.token';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [SharedModule, MyLinkDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss', 
+  providers: [{provide: MY_LINK_CLASS, useValue: 'there'}],
 })
 export class AppComponent implements OnInit{
   readonly myService = inject(MyService);
   readonly calc = vatCalculator();
   readonly destroy = inject(DestroyRef);
+  condition = false;
 
   constructor() {
     console.log(this.myService);
