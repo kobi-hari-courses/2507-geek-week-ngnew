@@ -25,11 +25,11 @@ export class AppComponent implements OnInit{
     const b = inject(MyService);
     console.log('b', b);
 
-    const sub = interval(1000).subscribe(() => {
-      console.log('it is now', Date.now());
-    });
+    // const sub = interval(1000).subscribe(() => {
+    //   console.log('it is now', Date.now());
+    // });
 
-    this.destroy.onDestroy(() => sub.unsubscribe());
+    // this.destroy.onDestroy(() => sub.unsubscribe());
 
   }
   ngOnInit(): void {
