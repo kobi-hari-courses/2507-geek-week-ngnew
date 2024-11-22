@@ -2,7 +2,7 @@
 <br>
 <img src="./images/logo.png" Height="135">
 # Ng New 2024 - The Angular Renaissance
-* By Kobi Hari (27/06/2024)
+* By Kobi Hari (26/11/2024)
 
 ## Contact me
 Please feel free to contact me for questions, or just to have a chat :-)
@@ -42,17 +42,13 @@ Please feel free to contact me for questions, or just to have a chat :-)
 * The `signal` function
 * The `computed` function
 * The `set` and `update` functions
-* The `mutate` function
 * The `effect` function
+  * Effects are a little different in Angular 19
 * Where can we create signals
 * The limitations of using signals
+* **NEW** in angular 19 - `linkedSignal`
 
-## Interoperability with RxJS
-* convert an observable into signal with the `toSignal` function
-* convert a signal into observable with the `toObservable` function
-* Use them both with caution - mind the injection context
-
-## Singnals in Angular 18+ (On the route to zoneless)
+## The new Angular APIS (17+) (On the route to zoneless)
 * Signals slowly replace the classic angular decorators
 * use `readonly caption = input('hello')` to create an input called `caption' with a default value of 'hello'
 * use `readonly caption = input.required<string>()` to create a required input
@@ -66,6 +62,25 @@ Please feel free to contact me for questions, or just to have a chat :-)
     * `<app-comp [(caption)]="writeableSignal"/>`
 * use the `viewChild()`, `viewChildren`, `contentChild`, `contentChildren` functions to query the view and content into a signal
 
+## Async development and signals
+### Interoperability with rxjs
+* convert an observable into signal with the `toSignal` function
+* convert a signal into observable with the `toObservable` function
+* Use them both with caution - mind the injection context
+
+### **NEW** The resource APIs in Angular 19
+* The `resource` api bridges to `Promise` apis
+  * Use a signal as trigger
+  * Run a `Promise` function when the trigger emits
+  * Tackles cases of race conditions like in a `switchMap` similar behavior
+  * Supports cancellation using `AbortSignal`
+  * Allows local values as well
+  * Allows to "reload" the same trigger value
+  * Exposes the latest value, status, error, isLoading
+* The `rxResource` api bridges to `Observable`
+  * No need for `AbortSignal` since observables natively support cancellation
+  * Only receives the first result of every observable
+  * Apart from that - is exactly the same as `resource`
 
 
 
