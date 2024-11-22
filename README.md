@@ -5,7 +5,8 @@
 * By Kobi Hari (26/11/2024)
 
 ## Contact me
-Please feel free to contact me for questions, or just to have a chat :-)
+Please feel free to contact me for questions, or just to 
+have a chat :-)
 - Kobi Hari - hari@applicolors.com
 
 ## Material 
