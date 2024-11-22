@@ -5,7 +5,6 @@ import { StringSelectorComponent } from "../../components/string-selector/string
 
 @Component({
     selector: 'app-signals',
-    standalone: true,
     templateUrl: './signals.component.html',
     styleUrl: './signals.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,

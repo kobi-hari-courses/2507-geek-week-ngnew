@@ -26,7 +26,10 @@ have a chat :-)
 ## The new `standalone` paradigm
 * Understanding standalone component
 * Bootstrapping applications without modules
-* Importing providers in the new paradigm
+* Importing providers in the new paradigm  
+* **NEW Angular 19**
+  * Now - you also provide the `APP_INITIALIZER` using `provideAppInitializer`
+  * `standalone:true` no longer neccessary. (actually, you now need `standalone:false` for non-standalone items)
 
 ## Routing in the standalone paradigm
 * Understanding Environment injetors

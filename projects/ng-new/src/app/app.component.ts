@@ -7,12 +7,11 @@ import { MyLinkDirective } from './directives/my-link.directive';
 import { MY_LINK_CLASS } from './directives/my-link-class.token';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [SharedModule, MyLinkDirective],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss', 
-  providers: [{provide: MY_LINK_CLASS, useValue: 'there'}],
+    selector: 'app-root',
+    imports: [SharedModule, MyLinkDirective],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    providers: [{ provide: MY_LINK_CLASS, useValue: 'there' }]
 })
 export class AppComponent implements OnInit{
   readonly myService = inject(MyService);
