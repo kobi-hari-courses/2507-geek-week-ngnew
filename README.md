@@ -1,4 +1,4 @@
-<img src="./images/geek-week.png" Height="80"><img src="./images/title.png" Height="80"><img src="./images/john-bryce.png" Height="80">
+<img src="./images/john-bryce.png" Height="80"><img src="./images/title.png" Height="80">
 <br>
 <img src="./images/logo.png" Height="135">
 # Ng New 2024 - The Angular Renaissance
