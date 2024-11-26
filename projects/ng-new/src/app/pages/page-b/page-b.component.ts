@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-b',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './page-b.component.scss'
 })
 export default class PageBComponent {
+  @Input({required: true})
+  num!: number;
 
 }
