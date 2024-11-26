@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, ApplicationConfig, ApplicationInitStatus, importProvidersFrom, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, ApplicationInitStatus, importProvidersFrom, inject, provideAppInitializer, provideExperimentalZonelessChangeDetection, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -8,7 +8,7 @@ import { InitService } from './services/init.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideExperimentalZonelessChangeDetection(), 
     provideRouter(routes, withComponentInputBinding()), 
     provideHttpClient(),
     provideAnimations(), 
