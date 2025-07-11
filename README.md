@@ -1,8 +1,8 @@
-<img src="./images/john-bryce.png" Height="80"><img src="./images/title.png" Height="80">
+<img src="./images/john-bryce.png" Height="80"><img src="./images/title.png" Height="80"><img src="./images/geek-week.png" Height="80">
 <br>
 <img src="./images/logo.png" Height="135">
-# Ng New 2024 - The Angular Renaissance
-* By Kobi Hari (26/11/2024)
+# Ng New 2025 - The Angular Renaissance
+* By Kobi Hari (15/07/2025)
 
 ## Contact me
 Please feel free to contact me for questions, or just to 
