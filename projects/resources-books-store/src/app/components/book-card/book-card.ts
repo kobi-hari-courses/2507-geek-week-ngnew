@@ -12,6 +12,4 @@ import { StateService } from '../../services/state-service';
 export class BookCard {
  readonly state = inject(StateService);
 
-  readonly stock = signal(43);
-
 }
