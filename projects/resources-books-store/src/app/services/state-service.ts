@@ -1,4 +1,5 @@
 import {
+  inject,
   Inject,
   Injectable,
   linkedSignal,
@@ -6,7 +7,9 @@ import {
   signal,
 } from '@angular/core';
 import { Book } from '../models/book';
-import { httpResource } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
+import { rxResource } from '@angular/core/rxjs-interop';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +17,7 @@ import { httpResource } from '@angular/common/http';
 export class StateService {
   readonly apiBase = 'http://localhost:3000/api/books';
   readonly wsBase = 'ws://localhost:3000/ws';
+  readonly http = inject(HttpClient);
 
   #keyword = signal<string>('the');
 
@@ -42,6 +46,13 @@ export class StateService {
     },
   });
 
+  #selectedBook = rxResource({
+    params: () => ({id: this.#selectedBookId()}), 
+    stream: (options) => options.params.id
+      ? this.http.get<Book>(`${this.apiBase}/${options.params.id}`)
+      : of(null)
+  });
+
   get keyword() {
     return this.#keyword.asReadonly();
   }
@@ -52,6 +63,10 @@ export class StateService {
 
   get selectedBookId() {
     return this.#selectedBookId.asReadonly();
+  }
+
+  get selectedBook() {
+    return this.#selectedBook.asReadonly();
   }
 
   setKeyword(value: string) {
