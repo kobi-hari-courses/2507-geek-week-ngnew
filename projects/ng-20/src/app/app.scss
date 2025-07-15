@@ -1,0 +1,17 @@
+:host {
+    nav {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            padding: 0.5rem;
+            text-decoration: none;
+            color: rgb(91, 126, 138);
+
+            &.here {
+                color: rgb(255, 255, 255);
+                background-color: rgb(91, 126, 138);
+            }
+        }
+    }
+}
